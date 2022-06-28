@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ pasta.name }}</h1>
+<p>{{ pasta.text }}</p>
+<a href="{% url PASTA_UPDATE pasta.pk %}">Update</a>
+{% if pasta.public %}
+<div>Public url: <a href="{{ pasta.get_public_url }}">{{ pasta.get_public_url }}</a></div>
+{% endif %}
+{% endblock %}

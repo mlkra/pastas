@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url PASTA_ADD %}">Add new pasta</a>
+{% if pasta_list %}
+<ul>
+    {% for pasta in pasta_list %}
+    <li><a href="{% url PASTA_DETAIL pasta.id %}">{{ pasta.name }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No pastas are available.</p>
+{% endif %}
+{% endblock %}
